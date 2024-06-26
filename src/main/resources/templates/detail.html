@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Détail</title>
+    <span th:replace="~{home :: bootstrapImport}"></span>
+</head>
+<body>
+<span th:replace="~{home :: navbar}"></span>
+
+<main class="container">
+    <h1>Détail de l'étudiant</h1>
+    <hr>
+    <div class="col justify-content-center">
+        <p>Nom : <span th:text="${student.getLastname()}"></span></p>
+        <p>Prénom : <span th:text="${student.getFirstname()}"></span></p>
+        <p>Âge : <span th:text="${student.getAge()}"></span></p>
+        <p>Email : <span th:text="${student.getEmail()}"></span></p>
+        <a th:href="@{/delete(studentId=${student.getId()})}">Supprimer</a>
+        <a th:href="@{/update(studentId=${student.getId()})}">Modifier</a>
+    </div>
+</main>
+
+<span th:replace="~{home :: footer}"></span>
+</body>
+</html>
